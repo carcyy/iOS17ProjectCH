@@ -14,6 +14,10 @@
 		8EAAF9822AD88C920027A7F3 /* iOS17ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAAF9812AD88C920027A7F3 /* iOS17ProjectTests.swift */; };
 		8EAAF98C2AD88C920027A7F3 /* iOS17ProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAAF98B2AD88C920027A7F3 /* iOS17ProjectUITests.swift */; };
 		8EAAF98E2AD88C920027A7F3 /* iOS17ProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAAF98D2AD88C920027A7F3 /* iOS17ProjectUITestsLaunchTests.swift */; };
+		8EAAF99B2AD88CA00027A7F3 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAAF99A2AD88CA00027A7F3 /* MapView.swift */; };
+		8EAAF9A02AD89EC20027A7F3 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAAF99F2AD89EC10027A7F3 /* ButtonView.swift */; };
+		8EAAF9A32AD8A15B0027A7F3 /* ButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAAF9A22AD8A15B0027A7F3 /* ButtonViewModel.swift */; };
+		8EAAF9A52AD8AD440027A7F3 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAAF9A42AD8AD440027A7F3 /* ContentViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +49,10 @@
 		8EAAF9872AD88C920027A7F3 /* iOS17ProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOS17ProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EAAF98B2AD88C920027A7F3 /* iOS17ProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS17ProjectUITests.swift; sourceTree = "<group>"; };
 		8EAAF98D2AD88C920027A7F3 /* iOS17ProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS17ProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8EAAF99A2AD88CA00027A7F3 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		8EAAF99F2AD89EC10027A7F3 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		8EAAF9A22AD8A15B0027A7F3 /* ButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViewModel.swift; sourceTree = "<group>"; };
+		8EAAF9A42AD8AD440027A7F3 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +104,8 @@
 			isa = PBXGroup;
 			children = (
 				8EAAF96F2AD88C8D0027A7F3 /* iOS17ProjectApp.swift */,
-				8EAAF9712AD88C8D0027A7F3 /* ContentView.swift */,
+				8EAAF9A12AD8A1430027A7F3 /* ViewModel */,
+				8EAAF99C2AD88CFA0027A7F3 /* View */,
 				8EAAF9732AD88C920027A7F3 /* Assets.xcassets */,
 				8EAAF9752AD88C920027A7F3 /* iOS17Project.entitlements */,
 				8EAAF9762AD88C920027A7F3 /* Preview Content */,
@@ -127,6 +136,25 @@
 				8EAAF98D2AD88C920027A7F3 /* iOS17ProjectUITestsLaunchTests.swift */,
 			);
 			path = iOS17ProjectUITests;
+			sourceTree = "<group>";
+		};
+		8EAAF99C2AD88CFA0027A7F3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8EAAF99F2AD89EC10027A7F3 /* ButtonView.swift */,
+				8EAAF9712AD88C8D0027A7F3 /* ContentView.swift */,
+				8EAAF99A2AD88CA00027A7F3 /* MapView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8EAAF9A12AD8A1430027A7F3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8EAAF9A22AD8A15B0027A7F3 /* ButtonViewModel.swift */,
+				8EAAF9A42AD8AD440027A7F3 /* ContentViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,6 +288,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EAAF9722AD88C8D0027A7F3 /* ContentView.swift in Sources */,
+				8EAAF9A32AD8A15B0027A7F3 /* ButtonViewModel.swift in Sources */,
+				8EAAF9A52AD8AD440027A7F3 /* ContentViewModel.swift in Sources */,
+				8EAAF99B2AD88CA00027A7F3 /* MapView.swift in Sources */,
+				8EAAF9A02AD89EC20027A7F3 /* ButtonView.swift in Sources */,
 				8EAAF9702AD88C8D0027A7F3 /* iOS17ProjectApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
