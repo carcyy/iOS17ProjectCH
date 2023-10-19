@@ -7,29 +7,100 @@
 
 import SwiftUI
 
-struct ContentView: View { // this view is messy
-    
+struct ContentView: View {
     @ObservedObject var contentViewModel = ContentViewModel()
-    
+    @State private var isOn = false
+    //@State private var buttonPosition: CGFloat = 20
+
     var body: some View {
-        NavigationView {
-            HStack {
-                NavigationLink(destination: MapView()) {
-                    Text("Map")
+            VStack {
+                HStack {
+                    VStack {
+                        Button("R.Notif") {
+                            contentViewModel.requestNotificationAuthorization()
+                        }
+                        Button("S.Notif") {
+                            contentViewModel.scheduleNotification()
+                        }
+                    }
+                    .padding([.leading, .trailing], 15)
+                    
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 15)
+                            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 50, alignment: .center)
+                            .padding([.leading, .trailing], 35)
+                            .foregroundColor(Color(hue: 0.1, saturation: 0.3, brightness: 0.8))
+
+                        RoundedRectangle(cornerRadius: 15)
+                            .frame(maxWidth: 125, maxHeight: 40, alignment: .center)
+                            .offset(x: isOn ? -UIScreen.main.bounds.width/4 : UIScreen.main.bounds.width/4)
+                            .foregroundColor(.white)
+                            .opacity(0.5)
+
+                        HStack {
+                            Button(action: {
+                                withAnimation {
+                                    isOn = true
+                                }
+                            }) {
+                                Text("Stay Local")
+                                    .frame(alignment: .center)
+                                    .foregroundColor(.brown)
+                                    //.padding([.leading], 25)
+                            }
+                            
+                            Spacer()
+                            
+                            Button(action: {
+                                withAnimation {
+                                    isOn = false
+                                }
+                            }) {
+                                Text("Go Global")
+                                    .foregroundColor(.brown)
+                                    //.padding([.trailing], 25)
+                            }
+                        }
+                    }
+                    .padding([.trailing, .leading], 15)
+                    
+                    Image("kitty")
+                        .resizable()
+                        .frame(width: 50, height: 50)
+                        .clipShape(Circle())
+                        .padding([.trailing, .leading], 15)
                 }
-                Button("Request Notification") {
-                    contentViewModel.requestNotificationAuthorization() // asks for permission to popup, if success it will allow you to schedule
+                .safeAreaInset(edge: .top, alignment: .center, spacing: 0) {
+                    Color.clear
+                        .frame(height: 20)
                 }
                 
-                Button("Schedule Notification") {
-                    contentViewModel.scheduleNotification() //schedules it for 5 seconds later
+                HStack{
+                    TabView {
+                        HomeView()
+                            .tabItem {
+                                Image(systemName: "house")
+                            }
+                        PlusView()
+                            .tabItem {
+                                Image(systemName: "plus.app")
+                            }
+                        MapView()
+                            .tabItem {
+                                Image(systemName: "mappin.square.fill")
+                            }
+                    }
+                }
+                .safeAreaInset(edge: .bottom, alignment: .center, spacing: 0) {
+                    Color.clear
+                        .frame(height: 25)
                 }
             }
-            .padding()
         }
-
     }
-}
+
+
+
 #Preview {
     ContentView()
 }
