@@ -9,6 +9,8 @@ import SwiftUI
 
 struct HomeView: View {
     
+    @State private var isLiked: Bool = UserDefaults.standard.bool(forKey: "isLiked")
+    
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 35)
@@ -16,6 +18,14 @@ struct HomeView: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
                 .padding(25)
+            
+            Button(action: {
+                        isLiked.toggle()
+                        UserDefaults.standard.set(isLiked, forKey: "isLiked")
+                    }) {
+                        Image(systemName: isLiked ? "heart.fill" : "heart")
+                            .foregroundColor(isLiked ? .red : .gray)
+                    }
+                }
         }
     }
-}
