@@ -27,13 +27,13 @@ struct ContentView: View {
                     
                     ZStack {
                         RoundedRectangle(cornerRadius: 15)
-                            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 50, alignment: .center)
+                            .frame(minWidth: 0, maxWidth: 130, minHeight: 0, maxHeight: 50, alignment: .center)
                             .padding([.leading, .trailing], 35)
                             .foregroundColor(Color(hue: 0.1, saturation: 0.3, brightness: 0.8))
 
                         RoundedRectangle(cornerRadius: 15)
-                            .frame(maxWidth: 125, maxHeight: 40, alignment: .center)
-                            .offset(x: isOn ? -UIScreen.main.bounds.width/4 : UIScreen.main.bounds.width/4)
+                            .frame(maxWidth: 65, maxHeight: 50, alignment: .center)
+                            .offset(x: isOn ? -32.5 : 32.5)
                             .foregroundColor(.white)
                             .opacity(0.5)
 
@@ -43,22 +43,18 @@ struct ContentView: View {
                                     isOn = true
                                 }
                             }) {
-                                Text("Stay Local")
+                                Text("Local")
                                     .frame(alignment: .center)
                                     .foregroundColor(.brown)
-                                    //.padding([.leading], 25)
                             }
-                            
-                            Spacer()
                             
                             Button(action: {
                                 withAnimation {
                                     isOn = false
                                 }
                             }) {
-                                Text("Go Global")
+                                Text("Global")
                                     .foregroundColor(.brown)
-                                    //.padding([.trailing], 25)
                             }
                         }
                     }
@@ -72,7 +68,7 @@ struct ContentView: View {
                 }
                 .safeAreaInset(edge: .top, alignment: .center, spacing: 0) {
                     Color.clear
-                        .frame(height: 20)
+                        .frame(height: 30)
                 }
                 
                 HStack{
@@ -91,7 +87,7 @@ struct ContentView: View {
                             }
                     }
                 }
-                .safeAreaInset(edge: .bottom, alignment: .center, spacing: 0) {
+                .safeAreaInset(edge: .bottom, alignment: .center, spacing: 5) {
                     Color.clear
                         .frame(height: 25)
                 }
